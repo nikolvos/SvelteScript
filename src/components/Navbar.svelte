@@ -1,10 +1,11 @@
 <script lang="ts">
-	import {  Omega, BookOpenText } from '@lucide/svelte';
+	import {  Omega, BookOpenText, PlusIcon } from '@lucide/svelte';
 	import { Navigation } from '@skeletonlabs/skeleton-svelte';
     let { children } = $props();
 	const links = [
 
 		{ label: 'some C', href: '/code', icon: BookOpenText  },
+		{ label: 'add content', href: '/addCode', icon: PlusIcon  },
 	
 	];
 </script>
@@ -23,7 +24,7 @@
 					{@const Icon = link.icon}
 					<Navigation.TriggerAnchor href={link.href}>
 						<Icon class="size-10 text-amber-500" />
-						<Navigation.TriggerText ><p class="text-2xl text-amber-500">{link.label}</p></Navigation.TriggerText>
+						<Navigation.TriggerText ></Navigation.TriggerText>
 					</Navigation.TriggerAnchor>
 				{/each}
 			</Navigation.Menu>

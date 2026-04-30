@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { FileIcon, FolderIcon } from '@lucide/svelte';
-	import { TreeView, createTreeViewCollection } from '@skeletonlabs/skeleton-svelte';
+  import { folderStructure } from '../stores/store.svelte';
+  import { TreeView, createTreeViewCollection } from '@skeletonlabs/skeleton-svelte';
   import Loader from './Loader.svelte';
 import NotLoaded from './NotLoaded.svelte';
   interface Node {
@@ -24,160 +25,162 @@ import NotLoaded from './NotLoaded.svelte';
     rootNode: {
         id: 'root',
         name: '',
-        children: [
-            {
-                id: 'OP_ISPITNI_ZADACI',
-                name: 'OP_ISPITNI_ZADACI',
-                children: [
-                
-                    {
-                        id: 'OP_2024_01_K',
-                        name: 'OP_2024_01_K',
-                        children: [
-                            {
-                                id: 'OP_2024_01_K/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_01_K/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_01_K/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2024_02_K',
-                        name: 'OP_2024_02_K',
-                        children: [
-                            {
-                                id: 'OP_2024_02_K/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_02_K/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_02_K/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2024_06_ispit',
-                        name: 'OP_2024_06_ispit',
-                        children: [
-                            {
-                                id: 'OP_2024_06_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_06_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_06_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2024_07_ispit',
-                        name: 'OP_2024_07_ispit',
-                        children: [
-                            {
-                                id: 'OP_2024_07_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_07_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_07_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2024_09_ispit',
-                        name: 'OP_2024_09_ispit',
-                        children: [
-                            {
-                                id: 'OP_2024_09_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_09_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2024_09_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2025_07_ispit',
-                        name: 'OP_2025_07_ispit',
-                        children: [
-                            {
-                                id: 'OP_2025_07_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_07_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_07_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2025_08_ispit',
-                        name: 'OP_2025_08_ispit',
-                        children: [
-                            {
-                                id: 'OP_2025_08_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_08_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_08_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-                    {
-                        id: 'OP_2025_09_1_ispit',
-                        name: 'OP_2025_09_1_ispit',
-                        children: [
-                            {
-                                id: 'OP_2025_09_1_ispit/1',
-                                name: 'prviZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_09_1_ispit/2',
-                                name: 'drugiZadatak.c',
-                            },
-                            {
-                                id: 'OP_2025_09_1_ispit/3',
-                                name: 'treciZadatak.c'
-                            },
-                        ],
-                    },
-         
-                ],
-            },
-        ],
+        children:folderStructure
+        // children: [
+        //     {
+        //         id: 'OP_ISPITNI_ZADACI',
+        //         name: 'OP_ISPITNI_ZADACI',
+        //         children: [
+        //
+        //             {
+        //                 id: 'OP_2024_01_K',
+        //                 name: 'OP_2024_01_K',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2024_01_K/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_01_K/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_01_K/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2024_02_K',
+        //                 name: 'OP_2024_02_K',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2024_02_K/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_02_K/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_02_K/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2024_06_ispit',
+        //                 name: 'OP_2024_06_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2024_06_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_06_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_06_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2024_07_ispit',
+        //                 name: 'OP_2024_07_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2024_07_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_07_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_07_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2024_09_ispit',
+        //                 name: 'OP_2024_09_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2024_09_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_09_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2024_09_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2025_07_ispit',
+        //                 name: 'OP_2025_07_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2025_07_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_07_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_07_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2025_08_ispit',
+        //                 name: 'OP_2025_08_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2025_08_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_08_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_08_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 id: 'OP_2025_09_1_ispit',
+        //                 name: 'OP_2025_09_1_ispit',
+        //                 children: [
+        //                     {
+        //                         id: 'OP_2025_09_1_ispit/1',
+        //                         name: 'prviZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_09_1_ispit/2',
+        //                         name: 'drugiZadatak.c',
+        //                     },
+        //                     {
+        //                         id: 'OP_2025_09_1_ispit/3',
+        //                         name: 'treciZadatak.c'
+        //                     },
+        //                 ],
+        //             },
+        //
+        //         ],
+        //
+        //     },
+        // ],
     },
     });
 </script>
