@@ -117,7 +117,7 @@
         <div class="space-y-6 ">
             <div class="prose prose-lg max-w-none">
                 <h2 class="text-3xl font-semibold text-stone-800 flex items-center gap-2">
-                    Problem
+                    Zadatak
                 </h2>
                 <p class="text-stone-700 leading-relaxed text-xl">
                     {loadedQuestion.question}
@@ -126,7 +126,7 @@
 
             <div class="space-y-2 ">
                 <h2 class="text-3xl font-semibold text-stone-800 flex items-center gap-2 mb-5">
-                    Solution
+                    Rešenje
                 </h2>
                 <div class="bg-[#1e1e1e] rounded-lg overflow-hidden shadow-lg">
                     <div class="bg-[#2d2d2d] px-4 py-2 border-b border-[#3c3c3c] flex items-center gap-2">
@@ -145,7 +145,7 @@
             {#if loadedQuestion.answerAlgorithm && Object.keys(loadedQuestion.answerAlgorithm).length > 0}
                 <div class="space-y-2 ">
                     <h2 class="text-3xl font-semibold text-stone-800 flex items-center gap-2 mb-5">
-                        Algorithm
+                        Algoritam
                     </h2>
                     <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                         <pre class="text-sm text-gray-700 font-mono overflow-x-auto">
@@ -158,8 +158,8 @@
     {:else}
         <div class="flex flex-col items-center justify-center h-full text-center space-y-4">
             <div class="text-6xl">🔍</div>
-            <h2 class="text-2xl font-semibold text-gray-700">Question Not Found</h2>
-            <p class="text-gray-500">The question with ID "{id}" doesn't exist in our database.</p>
+            <h2 class="text-2xl font-semibold text-gray-700">Pitanje nije pronađeno</h2>
+            <p class="text-gray-500">Pitanje sa ID-jem "{id}" ne postoji u našoj bazi podataka.</p>
         </div>
     {/if}
 </div>

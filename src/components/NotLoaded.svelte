@@ -3,7 +3,7 @@
 
 </script>
 
-<div class="mx-auto my-auto">
-	<h1 class="text-2xl text-stone-900 mb-5">Izaberite zadatak</h1>
-	<FileInputIcon size="2xl" color="purple"/>
+<div class="flex flex-col items-center justify-center gap-4 text-center">
+	<h1 class="text-2xl text-stone-900">Izaberite zadatak</h1>
+	<FileInputIcon size={48} class="text-purple-700" />
 </div>

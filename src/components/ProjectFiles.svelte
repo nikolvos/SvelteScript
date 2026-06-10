@@ -185,11 +185,11 @@ import NotLoaded from './NotLoaded.svelte';
     });
 </script>
 
-<div class="flex flex-row-reverse p-4 h-10/10  ">
+<div class="flex flex-col-reverse gap-4 p-3 sm:p-4 lg:flex-row-reverse">
 
 
 
-  <div class="flex-1 h-10/10  min-w-0  p-4 mb-4">
+  <div class="min-w-0 flex-1 rounded-xl p-3 sm:p-4 lg:max-w-88">
     <TreeView {collection}>
 
       <TreeView.Tree>
@@ -234,8 +234,12 @@ import NotLoaded from './NotLoaded.svelte';
   </div >
 
 
-  <div class="bg-purple-200 flex rounded-xl  h-10/10  flex-3  p-4 ">
-    {#if selectedFileId} <Loader id={selectedFileId}></Loader>{:else}<NotLoaded/>{/if}
+  <div class="flex min-h-96 flex-1 items-center justify-center rounded-xl bg-purple-200 p-3 sm:p-4 lg:flex-2">
+    {#if selectedFileId}
+      <Loader id={selectedFileId}></Loader>
+    {:else}
+      <NotLoaded />
+    {/if}
   </div>
 </div>
 
